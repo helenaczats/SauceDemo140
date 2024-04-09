@@ -1,0 +1,4 @@
+Existem três pontos principais de fragilidade em uma automacão:
+1- seletor errado, seletor mudou, seletor dinâmico
+2- falta de sincronismo (Tipos de Esperas - Waits)
+3- programacão exótica (muito boa ou muito ruim)
