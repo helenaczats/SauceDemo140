@@ -2,3 +2,18 @@ Existem três pontos principais de fragilidade em uma automacão:
 1- seletor errado, seletor mudou, seletor dinâmico
 2- falta de sincronismo (Tipos de Esperas - Waits)
 3- programacão exótica (muito boa ou muito ruim)
+
+Formas de Criação e Organização do Script
+
+1 - Gravação (Capture & Playback / Record & Play) = bom para algo importante e descartável, que muda muito, temporário
+2 - Exportação e Importação de código fonte (Script simples)
+3 - Criar o Script simples manualmente (1 arquivo)
+4 - Script com Cucumber / Behave (1 teste = 2 arquivos (1 é um arquivo de notas: .feature em Gherkin e o outro é o .py que é o script de automação))
+    Behave é o gerenciador de integracao entre o script em gherkin e o script de automacão. E um plugin(VScode)/framework (bibliotecas etc) para ajudar a criar scripts
+    que trabalhem na sintaxe gherkin, que trabalhem em um arquivo feature e um arquivo de script de automacão.
+
+BDD  = Behavior Driven Development = Desenvolvimento Direcionado por Comportamento
+    Foco no comportamento esperado do Software = dito pelo PO (Product Owner)
+
+    Critérios de Aceitação: (escrito em Sintaxe Gherkin)
+    Dado - Quando - E - Então (olhar cucumber.io)
