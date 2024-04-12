@@ -47,34 +47,27 @@ class Teste_Produtos():
         
         # entrar no carrinho
         
-        self.driver.find_element(By.CSS_SELECTOR, "shopping-cart-link").click() #entra no carrinho de compras
+        self.driver.find_element(By.CSS_SELECTOR, ".shopping_cart_link").click() #entra no carrinho de compras
         
         # validar carrinho de compras
         
-        assert self.driver.find_element(By.CSS_SELECTOR, "shopping_cart_link").text == "1"
+        assert self.driver.find_element(By.CSS_SELECTOR, ".shopping_cart_link").text == "1"
+
        
         # validar produto no carrinho
         
-        assert self.driver.find_element(By.CSS_SELECTOR, "inventory_details_name large_size").text == "Sauce Labs Backpack" #valida nome mochila
-        assert self.driver.find_element(By.CSS_SELECTOR, "inventory_details_price").text == "$29.99" #valida preço mochila
+        assert self.driver.find_element(By.CSS_SELECTOR, ".inventory_item_name").text == "Sauce Labs Backpack" #valida nome mochila
+        assert self.driver.find_element(By.CSS_SELECTOR, ".inventory_item_price").text == "$29.99" #valida preço mochila
         
         
        # Remover o produto
        
-        self.driver.find_element(By.CSS_SELECTOR, "btn btn_secondary btn_small btn_inventory").click() #remove mochila
+        self.driver.find_element(By.ID, "remove-sauce-labs-backpack").click() #remove mochila
         
        
        # Realizar Logout
         
         self.driver.find_element(By.ID, "react-burger-menu-btn").click() #entra no menu
-   
-        self.driver.find_element(By.ID, "logout-sidebar-link").click() #faz log out no site
+        self.driver.find_element(By.ID, "logout_sidebar_link").click() #faz log out no site
         
-        time.sleep(5)
-        
-    
-    
-    
-   
-   
     
