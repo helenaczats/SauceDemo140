@@ -42,4 +42,9 @@ Feature: Selecionar Produto
         | 06 | juca          | <branco>     | Epic sadface: Password is required                                         |
         | 07 | <branco>      | <branco>     | Epic sadface: Username is required                                         |
         | 08 | <branco>      | laranja      | Epic sadface: Username is required                                         |
+ 
+
+    
+
+    
    
