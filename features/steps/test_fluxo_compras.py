@@ -4,7 +4,6 @@ from behave import given, when, then
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-
 @given(u'que acesso o site Sauce Demo')
 def step_impl(context):
     # Setup / Inicializacão
@@ -20,13 +19,12 @@ def step_impl(context):
 def step_impl(context, usuario, senha):
     context.driver.find_element(By.ID, "user-name").send_keys(usuario) #preencher usuário
     context.driver.find_element(By.ID, "password").send_keys(senha)    #preencher a senha
-    context.driver.find_element(By.ID, "login-button").click()         #clicar no botão login
-
-   
+    context.driver.find_element(By.ID, "login-button").click() 
+    
 @then(u'sou direcionado para pagina Home')
 def step_impl(context):
     assert context.driver.find_element(By.CSS_SELECTOR, ".title").text == "Products"
-    time.sleep(10) # espera por 2 segundos - remover depois(alfinete)
+    time.sleep(2) # espera por 2 segundos - remover depois(alfinete)
     
 #Incluir produto no carrinho de compras   
 @when(u'incluo o produto Sauce Labs Backpack no carrinho')
@@ -45,13 +43,13 @@ def step_impl(context):
 @when(u'removo o produto')
 def step_impl(context):
     context.driver.find_element(By.ID, "remove-sauce-labs-backpack").click() #remove mochila  
-
+      
 #Valido carrinho vazio    
 @then(u'verifico que o carrinho esta vazio')
 def step_impl(context):
     context.driver.find_element(By.CSS_SELECTOR, ".shopping_cart_link").click() #entra no carrinho de compras
-    assert context.driver.find_element(By.CSS_SELECTOR, ".shopping_cart_link").text == "0" #valida quantidade    
-
+    numero_carrinho = context.driver.find_elements(By.CSS_SELECTOR, ".shopping_cart_linkspan")
+    assert len(numero_carrinho) == 0 #valida quantidade    
 
 #Logout
 @then(u'realizo logout')
@@ -61,4 +59,5 @@ def step_impl(context):
 
 
 #teardown / encerramento
-    context.driver.quit()
+
+    context.driver.quit()  
